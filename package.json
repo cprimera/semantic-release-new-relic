@@ -1,0 +1,49 @@
+{
+  "name": "semantic-release-new-relic",
+  "version": "0.1.0",
+  "description": "Semantic Release plugin for New Relic release tagging",
+  "main": "index.js",
+  "author": {
+    "name": "Christopher Primerano",
+    "email": "cprimera@mac.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --fix index.js lib test",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^15.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.0",
+    "semantic-release": "^18.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "npm run test"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
